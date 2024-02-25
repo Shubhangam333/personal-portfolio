@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/app/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import AnimatedCursor from "react-animated-cursor";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,6 +30,20 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <AnimatedCursor
+            innerSize={8}
+            outerSize={35}
+            innerScale={1}
+            outerScale={2}
+            outerAlpha={0}
+            hasBlendMode={true}
+            innerStyle={{
+              backgroundColor: "var(--cursor-color)",
+            }}
+            outerStyle={{
+              border: "3px solid var(--cursor-color)",
+            }}
+          />
           <Navbar />
           {children}
         </ThemeProvider>

@@ -35,7 +35,7 @@ const navItems: navItem[] = [
 export default function Navbar() {
   const [mobNavActive, setMobNavActive] = useState<Boolean>(false);
   return (
-    <header className="flex items-center justify-between z-[1200] bg-[#020817]  shadow py-2 h-16 fixed top-0 left-0 right-0">
+    <header className="flex items-center justify-between z-[120] bg-[#020817]  shadow py-2 h-16 fixed top-0 left-0 right-0">
       <Link
         className="text-xl tracking-wider text-gray-100 flex justify-center items-center"
         href="#"
@@ -83,7 +83,7 @@ function MobileNav() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: "-100%" }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="fixed left-0 right-0 top-14 bg-[#13131F] z-[1000] py-4 lg:hidden"
+      className="fixed left-0 right-0 top-14 bg-[#13131F] z-[100] py-4 lg:hidden"
     >
       <section className=" flex flex-col gap-2 ">
         {navItems.map((d, i) => (
