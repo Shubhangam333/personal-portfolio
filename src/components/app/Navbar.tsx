@@ -36,9 +36,9 @@ export default function Navbar() {
         className="text-xl tracking-wider text-gray-100 flex justify-center items-center"
         href="#"
       >
-        <ChevronLeft className="text-[#854CE6]" />
+        <ChevronLeft className="text-[#854CE6] font-bold" />
         Shubhangam <span className="text-[#854CE6]"> /</span> Saxena
-        <ChevronRight className="text-[#854CE6]" />
+        <ChevronRight className="text-[#854CE6] font-bold" />
       </Link>
       <nav className="space-x-4">
         {navItems.map((d, i) => (

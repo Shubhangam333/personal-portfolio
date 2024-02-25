@@ -2,7 +2,7 @@ import About from "@/components/app/About";
 
 export default function Home() {
   return (
-    <main>
+    <main className="px-12">
       <About />
     </main>
   );
