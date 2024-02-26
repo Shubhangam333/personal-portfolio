@@ -35,7 +35,7 @@ const navItems: navItem[] = [
 export default function Navbar() {
   const [mobNavActive, setMobNavActive] = useState<Boolean>(false);
   return (
-    <header className="flex items-center justify-between z-[120] bg-[#020817]  shadow py-2 h-16 fixed top-0 left-0 right-0">
+    <header className="flex items-center justify-between z-[120] bg-[#020817]  shadow py-4 px-4 h-16 fixed top-0 left-0 right-0">
       <Link
         className="text-xl tracking-wider text-gray-100 flex justify-center items-center"
         href="#"

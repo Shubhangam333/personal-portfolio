@@ -107,3 +107,6 @@ html {
 html.dark-mode {
   --cursor-color: #333;
 }
+.shadow-custom {
+  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+}
