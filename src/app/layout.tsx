@@ -30,7 +30,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AnimatedCursor
+          {/* <AnimatedCursor
             innerSize={8}
             outerSize={35}
             innerScale={1}
@@ -43,7 +43,7 @@ export default function RootLayout({
             outerStyle={{
               border: "3px solid var(--cursor-color)",
             }}
-          />
+          /> */}
           <Navbar />
           {children}
         </ThemeProvider>

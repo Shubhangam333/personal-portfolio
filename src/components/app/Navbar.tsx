@@ -44,7 +44,7 @@ export default function Navbar() {
         Shubhangam <span className="text-[#854CE6]"> /</span> Saxena
         <ChevronRight className="text-[#854CE6] font-bold" />
       </Link>
-      <nav className="lg:block hidden text-lg">
+      <nav className="lg:block hidden text-md ">
         {navItems.map((d, i) => (
           <Button
             variant="link"
