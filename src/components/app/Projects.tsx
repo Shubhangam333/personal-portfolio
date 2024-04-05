@@ -8,8 +8,10 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import ProjectCard from "./ProjectCard";
+import { data } from "../../data";
 
 export default function Projects() {
+  console.log("dd", data);
   return (
     <section className="flex flex-col items-center justify-center my-8 gap-6">
       <h1 className="lg:text-5xl text-3xl  text-center my-8">Projects</h1>
@@ -19,13 +21,9 @@ export default function Projects() {
       </p>
 
       <div className="flex flex-wrap w-full gap-6 items-center justify-center h-full">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        {data.map((project) => (
+          <ProjectCard project={project} key={project.id} />
+        ))}
       </div>
     </section>
   );

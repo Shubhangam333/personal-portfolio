@@ -19,8 +19,9 @@ import {
 import Image from "next/image";
 import EmblaCarousel from "./EmblaCarousel";
 import { Button } from "../ui/button";
+import { ProjectType } from "@/interface";
 
-export default function ProjectCard() {
+export default function ProjectCard({ project }: { project: ProjectType }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -28,18 +29,23 @@ export default function ProjectCard() {
           <CardHeader className="flex flex-col gap-2">
             <CardTitle>
               <Image
-                src="/ecom-mern.png"
-                alt="ecom"
+                src={project.images[0].path}
+                alt={project.images[0].alt}
                 // fill={true}
                 style={{ objectFit: "cover" }}
                 width={500}
                 height={500}
               />
             </CardTitle>
-            <CardDescription>
-              <span className="bg-[#231E36] text-[#854CE6] text-xs px-2 py-1 rounded-lg">
-                React Js
-              </span>
+            <CardDescription className="flex gap-2 flex-wrap">
+              {project.skills.map((s, id) => (
+                <span
+                  key={id}
+                  className="bg-[#231E36] text-[#854CE6] text-xs px-2 py-1 rounded-lg"
+                >
+                  {s.toLowerCase()}
+                </span>
+              ))}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -47,32 +53,33 @@ export default function ProjectCard() {
           </CardContent>
           <CardFooter>
             <p className="text-[#C3C4C5] ">
-              By combining the strengths of the MERN stack, Redux Toolkit, React
-              Query, and Tailwind CSS,
+              {project.description.slice(0, 60)}...
             </p>
           </CardFooter>
         </Card>
       </DialogTrigger>
 
-      <DialogContent className="max-w-[60%] w-[60%] p-8 fixed  z-[1200]  h-[400px] overflow-y-scroll">
+      <DialogContent className="max-w-[80%] w-[80%]  p-8 fixed  z-[1200]  h-[400px] overflow-y-scroll">
         <DialogHeader>
           <DialogTitle>
             <EmblaCarousel />
           </DialogTitle>
           <DialogDescription className="pt-5 flex flex-col gap-5 items-start">
-            <p className="text-white font-bold text-xl">Ecommerce App</p>
-            <span className="bg-[#231E36] text-[#854CE6] text-xs px-2 py-1 rounded-lg">
-              React Js
-            </span>
-            <p>
-              By combining the strengths of the MERN stack, Redux Toolkit, React
-              Query, and Tailwind CSS, this e-commerce website would offer a
-              secure, scalable, and visually appealing platform for both users
-              and administrators
-            </p>
+            <p className="text-white font-bold text-xl">{project.name}</p>
+            <div className="flex gap-2 flex-wrap">
+              {project.skills.map((s, id) => (
+                <span
+                  key={id}
+                  className="bg-[#231E36] text-[#854CE6] text-xs px-2 py-1 rounded-lg"
+                >
+                  {s.toLowerCase()}
+                </span>
+              ))}
+            </div>
+            <p className="text-left">{project.description}</p>
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter className="flex justify-between w-full">
+        <DialogFooter className="flex justify-between w-full md:gap-0 gap-2">
           <Button variant={"outline"} className="w-full">
             View Code
           </Button>
